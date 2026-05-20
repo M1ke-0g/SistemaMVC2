@@ -1,0 +1,48 @@
+﻿@model SistemaMVC2.Models.Cliente
+
+@{
+    ViewBag.Title = "Eliminar Cliente";
+}
+
+<h2>🗑️ Eliminar Cliente</h2>
+
+<div class="container-form">
+    <div class="alert alert-warning">
+        ⚠️ ¿Está seguro de que desea eliminar este cliente? Esta acción no se puede deshacer.
+    </div>
+
+    <div class="form-group">
+        <label><strong>Nombre:</strong></label>
+        <p>@Model.Nombre</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Apellidos:</strong></label>
+        <p>@Model.Apellidos</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>DNI:</strong></label>
+        <p>@Model.DNI</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Dirección:</strong></label>
+        <p>@Model.Direccion</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Teléfono:</strong></label>
+        <p>@Model.Telefono</p>
+    </div>
+
+    @using (Html.BeginForm("Delete", "Cliente", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.ClienteId)
+
+        <div class="btn-group-custom">
+            <button type="submit" class="btn btn-danger btn-lg">🗑️ Confirmar eliminación</button>
+            @Html.ActionLink("❌ Cancelar", "Index", null, new { @class = "btn btn-default btn-lg" })
+        </div>
+    }
+</div>

@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+<div class="jumbotron">
+    <h1>🏢 Sistema MVC</h1>
+    <p class="lead">Bienvenido al sistema de gestión de reparaciones de electrodomésticos</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="module-card clientes">
+            <div class="module-icon">👥</div>
+            <h2>@Html.ActionLink("Clientes", "Index", "Cliente")</h2>
+            <p>Gestiona todos los clientes del sistema. Visualiza, crea, edita y elimina registros de clientes.</p>
+            @Html.ActionLink("Ir a Clientes", "Index", "Cliente", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="module-card tecnicos">
+            <div class="module-icon">🔧</div>
+            <h2>@Html.ActionLink("Técnicos", "Index", "Tecnico")</h2>
+            <p>Administra el equipo de técnicos. Crea, modifica y elimina información de técnicos especializados.</p>
+            @Html.ActionLink("Ir a Técnicos", "Index", "Tecnico", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="module-card electrodomesticos">
+            <div class="module-icon">📱</div>
+            <h2>@Html.ActionLink("Electrodomésticos", "Index", "Electrodomestico")</h2>
+            <p>Gestiona el catálogo de electrodomésticos. Registra tipos, modelos y precios de tus productos.</p>
+            @Html.ActionLink("Ir a Electrodomésticos", "Index", "Electrodomestico", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="module-card reparaciones">
+            <div class="module-icon">🛠️</div>
+            <h2>@Html.ActionLink("Reparaciones", "Index", "Reparacion")</h2>
+            <p>Registra y controla todas las reparaciones. Documenta descripciones, costes y garantías.</p>
+            @Html.ActionLink("Ir a Reparaciones", "Index", "Reparacion", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>

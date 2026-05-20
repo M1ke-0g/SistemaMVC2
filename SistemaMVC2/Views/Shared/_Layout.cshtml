@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sistema MVC</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/custom.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        /* ==================== ESTILOS LIMPIOS Y MINIMALISTAS ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            background: #f8f9fa !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* NAVBAR LIMPIA */
+        .navbar-inverse {
+            background: #2c3e50 !important;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-inverse .navbar-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white !important;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 0.95rem;
+        }
+
+        /* HEADER */
+        .jumbotron {
+            background: #fff !important;
+            color: #333 !important;
+            padding: 40px 30px !important;
+            border-bottom: 3px solid #3498db;
+            border-radius: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            text-align: center;
+            margin-top: -15px;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        .jumbotron h1 {
+            font-size: 2.5rem !important;
+            font-weight: 600 !important;
+            margin-bottom: 10px;
+            color: #2c3e50 !important;
+        }
+
+        .jumbotron .lead {
+            font-size: 1rem !important;
+            font-weight: 400;
+            color: #666 !important;
+            margin-bottom: 0;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .body-content {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        /* TARJETAS DE MÓDULOS - SIMPLES */
+        .module-card {
+            background: white !important;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.2s ease;
+            text-align: center;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .module-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: #3498db;
+        }
+
+        .module-card.clientes {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .module-card.tecnicos {
+            border-left: 4px solid #27ae60;
+        }
+
+        .module-card.electrodomesticos {
+            border-left: 4px solid #f39c12;
+        }
+
+        .module-card.reparaciones {
+            border-left: 4px solid #3498db;
+        }
+
+        .module-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .module-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .module-card h2 a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        .module-card h2 a:hover {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        .module-card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5;
+        }
+
+        /* BOTONES SIMPLES */
+        .module-card .btn {
+            align-self: center;
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .module-card .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .module-card .btn-primary:hover {
+            background: #2980b9;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* TABLAS */
+        .table {
+            background: white;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table thead {
+            background: #ecf0f1;
+        }
+
+        .table thead th {
+            border: 1px solid #bdc3c7;
+            padding: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .table tbody tr {
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .table tbody td {
+            padding: 12px;
+            border: 1px solid #ecf0f1;
+        }
+
+        /* BOTONES EN TABLAS */
+        .btn-info {
+            background: #3498db;
+            color: white !important;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        .btn-info:hover {
+            background: #2980b9;
+            text-decoration: none;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: white !important;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        .btn-warning:hover {
+            background: #d68910;
+            text-decoration: none;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white !important;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border-radius: 3px;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+            text-decoration: none;
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        /* FORMULARIOS */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            outline: none;
+        }
+
+        input,
+        select,
+        textarea {
+            max-width: 100%;
+            border-radius: 4px;
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        /* SECCIONES */
+        h2, h3 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            border: none;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-default {
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            color: #2c3e50;
+        }
+
+        .btn-default:hover {
+            background: #d5dbdb;
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .btn-group-custom {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .btn-lg {
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 4px;
+        }
+
+        .container-form {
+            background: white;
+            padding: 30px;
+            border: 1px solid #ecf0f1;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE */
+        @@media (max-width: 768px) {
+            .jumbotron {
+                padding: 30px 20px !important;
+            }
+
+            .jumbotron h1 {
+                font-size: 1.8rem !important;
+            }
+
+            .jumbotron .lead {
+                font-size: 0.95rem !important;
+            }
+
+            .module-card {
+                min-height: auto;
+            }
+
+            .module-icon {
+                font-size: 2rem;
+            }
+
+            .btn-group-custom {
+                flex-direction: column;
+            }
+
+            .btn-group-custom .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("🏢 Sistema MVC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Sistema MVC | Gestión de Reparaciones de Electrodomésticos</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿@model SistemaMVC2.Models.Reparacion
+
+@{
+    ViewBag.Title = "Editar Reparación";
+}
+
+<h2>✏️ Editar Reparación</h2>
+
+<div class="container-form">
+    @using (Html.BeginForm("Edit", "Reparacion", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Descripcion)
+            @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Fecha)
+            @Html.TextBoxFor(m => m.Fecha, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Hora)
+            @Html.TextBoxFor(m => m.Hora, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Coste)
+            @Html.TextBoxFor(m => m.Coste, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Garantia)
+            @Html.TextBoxFor(m => m.Garantia, new { @class = "form-control" })
+        </div>
+
+        <div class="btn-group-custom">
+            <button type="submit" class="btn btn-primary btn-lg">💾 Guardar cambios</button>
+            @Html.ActionLink("❌ Cancelar", "Index", null, new { @class = "btn btn-default btn-lg" })
+        </div>
+    }
+</div>

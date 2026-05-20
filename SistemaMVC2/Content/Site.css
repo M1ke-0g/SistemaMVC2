@@ -1,0 +1,399 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* ==================== JUMBOTRON MEJORADO ==================== */
+.jumbotron {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.jumbotron .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.95;
+    letter-spacing: 0.5px;
+}
+
+/* ==================== TARJETAS DE MÓDULOS ==================== */
+.module-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    border-top: 5px solid #667eea;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.module-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-top-color: #764ba2;
+}
+
+.module-card.clientes {
+    border-top-color: #FF6B6B;
+}
+
+.module-card.clientes:hover {
+    border-top-color: #FF5252;
+}
+
+.module-card.tecnicos {
+    border-top-color: #4ECDC4;
+}
+
+.module-card.tecnicos:hover {
+    border-top-color: #2DBFAA;
+}
+
+.module-card.electrodomesticos {
+    border-top-color: #FFD93D;
+}
+
+.module-card.electrodomesticos:hover {
+    border-top-color: #FFC300;
+}
+
+.module-card.reparaciones {
+    border-top-color: #95E1D3;
+}
+
+.module-card.reparaciones:hover {
+    border-top-color: #6FD9C1;
+}
+
+.module-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.module-card h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 700;
+}
+
+.module-card h2 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.module-card h2 a:hover {
+    text-decoration: none;
+}
+
+.module-card p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.module-card .btn {
+    align-self: center;
+    width: 100%;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.module-card .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.module-card .btn-primary:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #663a90 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #663a90 100%);
+}
+
+/* ==================== ROW Y GRID ==================== */
+.row {
+    margin-bottom: 30px;
+}
+
+.col-md-4 {
+    margin-bottom: 30px;
+}
+
+/* ==================== TABLA MEJORADA ==================== */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.table thead th {
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* ==================== BOTONES DE ACCIÓN ==================== */
+.btn {
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-info {
+    background: #4ECDC4;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #2DBFAA;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: #FFD93D;
+    color: #333;
+}
+
+.btn-warning:hover {
+    background: #FFC300;
+    color: #333;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #FF6B6B;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #FF5252;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+/* ==================== NAVBAR MEJORADA ==================== */
+.navbar-inverse {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-inverse .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    transition: all 0.3s ease;
+    padding: 15px 20px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* ==================== FORMULARIOS ==================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* ==================== CONTENEDOR PERSONALIZADO ==================== */
+.container-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.btn-group-custom {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.btn-lg {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 50px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 30px 20px;
+    }
+
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+
+    .jumbotron .lead {
+        font-size: 1.2rem;
+    }
+
+    .module-card {
+        min-height: auto;
+    }
+
+    .module-icon {
+        font-size: 2.5rem;
+    }
+
+    .btn-group-custom {
+        flex-direction: column;
+    }
+
+    .btn-group-custom .btn {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,48 @@
+﻿@model SistemaMVC2.Models.Reparacion
+
+@{
+    ViewBag.Title = "Eliminar Reparación";
+}
+
+<h2>🗑️ Eliminar Reparación</h2>
+
+<div class="container-form">
+    <div class="alert alert-warning">
+        ⚠️ ¿Está seguro de que desea eliminar esta reparación? Esta acción no se puede deshacer.
+    </div>
+
+    <div class="form-group">
+        <label><strong>Descripción:</strong></label>
+        <p>@Model.Descripcion</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Fecha:</strong></label>
+        <p>@Model.Fecha.ToString("dd/MM/yyyy")</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Hora:</strong></label>
+        <p>@Model.Hora</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Coste:</strong></label>
+        <p>@Model.Coste.ToString("C")</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Garantía:</strong></label>
+        <p>@Model.Garantia</p>
+    </div>
+
+    @using (Html.BeginForm("Delete", "Reparacion", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="btn-group-custom">
+            <button type="submit" class="btn btn-danger btn-lg">🗑️ Confirmar eliminación</button>
+            @Html.ActionLink("❌ Cancelar", "Index", null, new { @class = "btn btn-default btn-lg" })
+        </div>
+    }
+</div>

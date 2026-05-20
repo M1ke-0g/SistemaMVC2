@@ -1,0 +1,44 @@
+﻿@model SistemaMVC2.Models.Reparacion
+
+@{
+    ViewBag.Title = "Detalles de la Reparación";
+}
+
+<h2>👁️ Detalles de la Reparación</h2>
+
+<div class="container-form">
+    <div class="form-group">
+        <label><strong>ID:</strong></label>
+        <p>@Model.Id</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Descripción:</strong></label>
+        <p>@Model.Descripcion</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Fecha:</strong></label>
+        <p>@Model.Fecha.ToString("dd/MM/yyyy")</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Hora:</strong></label>
+        <p>@Model.Hora</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Coste:</strong></label>
+        <p>@Model.Coste.ToString("C")</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Garantía:</strong></label>
+        <p>@Model.Garantia</p>
+    </div>
+
+    <div class="btn-group-custom">
+        @Html.ActionLink("✏️ Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning btn-lg" })
+        @Html.ActionLink("🔙 Volver a la lista", "Index", null, new { @class = "btn btn-default btn-lg" })
+    </div>
+</div>

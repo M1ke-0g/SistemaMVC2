@@ -1,0 +1,39 @@
+﻿@model List<SistemaMVC2.Models.Tecnico>
+
+@{
+    ViewBag.Title = "Técnicos";
+}
+
+<h2>🔧 Lista de Técnicos</h2>
+
+<p>
+    @Html.ActionLink("➕ Crear Nuevo Técnico", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>NIF</th>
+            <th>Móvil</th>
+            <th style="width: 200px;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Apellidos</td>
+                <td>@item.NIF</td>
+                <td>@item.Movil</td>
+                <td>
+                    @Html.ActionLink("👁️ Ver", "Details", new { id = item.TecnicoId }, new { @class = "btn btn-info btn-sm" })
+                    @Html.ActionLink("✏️ Editar", "Edit", new { id = item.TecnicoId }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("🗑️ Eliminar", "Delete", new { id = item.TecnicoId }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

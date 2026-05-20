@@ -1,0 +1,38 @@
+﻿@model SistemaMVC2.Models.Tecnico
+
+@{
+    ViewBag.Title = "Eliminar Técnico";
+}
+
+<h2>🗑️ Eliminar Técnico</h2>
+
+<div class="container-form">
+    <div class="alert alert-warning">
+        ⚠️ ¿Está seguro de que desea eliminar este técnico? Esta acción no se puede deshacer.
+    </div>
+
+    <div class="form-group">
+        <label><strong>Nombre:</strong></label>
+        <p>@Model.Nombre</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Apellidos:</strong></label>
+        <p>@Model.Apellidos</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>NIF:</strong></label>
+        <p>@Model.NIF</p>
+    </div>
+
+    @using (Html.BeginForm("Delete", "Tecnico", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.TecnicoId)
+
+        <div class="btn-group-custom">
+            <button type="submit" class="btn btn-danger btn-lg">🗑️ Confirmar eliminación</button>
+            @Html.ActionLink("❌ Cancelar", "Index", null, new { @class = "btn btn-default btn-lg" })
+        </div>
+    }
+</div>

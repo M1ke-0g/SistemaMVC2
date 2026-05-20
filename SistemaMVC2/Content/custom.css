@@ -1,0 +1,400 @@
+/* ==================== ESTILOS PERSONALIZADOS AVANZADOS ==================== */
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Aplicar animación a elementos */
+.module-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+h1, h2 {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.jumbotron p {
+    animation: slideInRight 0.5s ease-out 0.2s backwards;
+}
+
+/* ==================== DETALLES Y DESCRIPCIÓN ==================== */
+.detail-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.detail-row {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 700;
+    color: #667eea;
+    min-width: 200px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    color: #333;
+    font-size: 1.1rem;
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+/* ==================== ALERTAS Y MENSAJES ==================== */
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.alert-info {
+    background: #e3f2fd;
+    border-left-color: #2196F3;
+    color: #1565c0;
+}
+
+.alert-success {
+    background: #e8f5e9;
+    border-left-color: #4CAF50;
+    color: #2e7d32;
+}
+
+.alert-warning {
+    background: #fff3e0;
+    border-left-color: #FF9800;
+    color: #e65100;
+}
+
+.alert-danger {
+    background: #ffebee;
+    border-left-color: #f44336;
+    color: #c62828;
+}
+
+/* ==================== BREADCRUMB MEJORADO ==================== */
+.breadcrumb {
+    background: transparent;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    border-radius: 0;
+}
+
+.breadcrumb > li + li:before {
+    content: "→";
+    padding: 0 10px;
+    color: #667eea;
+}
+
+.breadcrumb > li > a {
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb > li > a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.breadcrumb > li.active {
+    color: #666;
+    font-weight: 600;
+}
+
+/* ==================== TARJETAS DE INFORMACIÓN ==================== */
+.info-card {
+    background: white;
+    border-left: 4px solid;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateX(5px);
+}
+
+.info-card.primary {
+    border-left-color: #667eea;
+}
+
+.info-card.success {
+    border-left-color: #4CAF50;
+}
+
+.info-card.warning {
+    border-left-color: #FFD93D;
+}
+
+.info-card.danger {
+    border-left-color: #FF6B6B;
+}
+
+.info-card h4 {
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 700;
+}
+
+.info-card p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+/* ==================== ELEMENTOS DE LISTA ==================== */
+.list-group {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item:hover {
+    background: #f8f9fa;
+    padding-left: 30px;
+}
+
+.list-group-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+/* ==================== BADGES Y ETIQUETAS ==================== */
+.badge {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.badge-primary {
+    background: #667eea;
+    color: white;
+}
+
+.badge-success {
+    background: #4CAF50;
+    color: white;
+}
+
+.badge-warning {
+    background: #FFD93D;
+    color: #333;
+}
+
+.badge-danger {
+    background: #FF6B6B;
+    color: white;
+}
+
+.badge-info {
+    background: #4ECDC4;
+    color: white;
+}
+
+/* ==================== SOMBRAS PERSONALIZADAS ==================== */
+.shadow-sm {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-md {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== ESPACIOS ==================== */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+.p-5 { padding: 3rem; }
+
+/* ==================== TEXTO ==================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-muted { color: #999; }
+.text-success { color: #4CAF50; }
+.text-danger { color: #FF6B6B; }
+.text-warning { color: #FFD93D; }
+.text-info { color: #4ECDC4; }
+
+.font-weight-bold { font-weight: 700; }
+.font-weight-normal { font-weight: 400; }
+.font-italic { font-style: italic; }
+
+/* ==================== GRID RESPONSIVO AVANZADO ==================== */
+@media (max-width: 992px) {
+    .col-md-6 {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detail-label {
+        margin-bottom: 8px;
+        min-width: auto;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .table thead th {
+        padding: 10px;
+    }
+
+    .table tbody td {
+        padding: 10px;
+    }
+
+    .btn-sm {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .jumbotron {
+        padding: 20px 15px;
+    }
+
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
+
+    .jumbotron .lead {
+        font-size: 1rem;
+    }
+
+    .module-icon {
+        font-size: 2rem;
+    }
+
+    .module-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .module-card p {
+        font-size: 0.95rem;
+    }
+
+    .detail-label {
+        font-size: 0.9rem;
+    }
+
+    .detail-value {
+        font-size: 1rem;
+    }
+}
+
+/* ==================== EFECTOS DE TRANSICIÓN ==================== */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button, a, input[type="button"], input[type="submit"] {
+    transition: all 0.3s ease;
+}
+
+/* ==================== SCROLLBAR PERSONALIZADO ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}

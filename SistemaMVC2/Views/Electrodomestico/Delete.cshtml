@@ -1,0 +1,38 @@
+﻿@model SistemaMVC2.Models.Electrodomestico
+
+@{
+    ViewBag.Title = "Eliminar Electrodoméstico";
+}
+
+<h2>🗑️ Eliminar Electrodoméstico</h2>
+
+<div class="container-form">
+    <div class="alert alert-warning">
+        ⚠️ ¿Está seguro de que desea eliminar este electrodoméstico? Esta acción no se puede deshacer.
+    </div>
+
+    <div class="form-group">
+        <label><strong>Tipo:</strong></label>
+        <p>@Model.Tipo</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Modelo:</strong></label>
+        <p>@Model.Modelo</p>
+    </div>
+
+    <div class="form-group">
+        <label><strong>Precio:</strong></label>
+        <p>@Model.Precio.ToString("C")</p>
+    </div>
+
+    @using (Html.BeginForm("Delete", "Electrodomestico", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.ElectrodomesticoId)
+
+        <div class="btn-group-custom">
+            <button type="submit" class="btn btn-danger btn-lg">🗑️ Confirmar eliminación</button>
+            @Html.ActionLink("❌ Cancelar", "Index", null, new { @class = "btn btn-default btn-lg" })
+        </div>
+    }
+</div>

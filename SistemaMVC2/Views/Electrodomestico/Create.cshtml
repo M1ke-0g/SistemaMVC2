@@ -1,0 +1,34 @@
+﻿@model SistemaMVC2.Models.Electrodomestico
+
+@{
+    ViewBag.Title = "Crear Electrodoméstico";
+}
+
+<h2>➕ Crear Nuevo Electrodoméstico</h2>
+
+<div class="container-form">
+    @using (Html.BeginForm("Create", "Electrodomestico", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Tipo)
+            @Html.TextBoxFor(m => m.Tipo, new { @class = "form-control", @placeholder = "Ej: Nevera" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Modelo)
+            @Html.TextBoxFor(m => m.Modelo, new { @class = "form-control", @placeholder = "Ej: RF-2024" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Precio)
+            @Html.TextBoxFor(m => m.Precio, new { @class = "form-control", @placeholder = "Ej: 450.00" })
+        </div>
+
+        <div class="btn-group-custom">
+            <button type="submit" class="btn btn-primary btn-lg">💾 Guardar</button>
+            @Html.ActionLink("❌ Cancelar", "Index", null, new { @class = "btn btn-default btn-lg" })
+        </div>
+    }
+</div>
